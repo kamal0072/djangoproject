@@ -1,0 +1,38 @@
+{% extends 'employee_register/base.html' %}
+
+{% block content %}
+        {% block heading %}
+                 <h1 class="display-4 text-center">Employee detail will be here </h1>
+        {% endblock heading %}
+    <table class="table table-borderless table-dark">
+     
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Full Name</td>
+                    <td>Employee Code</td>
+                    <td>Moblie Number</td>
+                    <td>Position</td>
+                    <td>
+                        <a class="btn btn-info" href="{% url 'employee_insert' %}">
+                       <i class="fas fa-plus"></i> Add New</a>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employe_list %}
+                    <tr>
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.fullname}}</td>
+                        <td>{{employee.emp_code}}</td>
+                        <td>{{employee.mobile}}</td>
+                        <td>{{employee.position}}</td>
+                        <td>
+                        <a class="btn btn-success" href="{% url 'employee_update' employee.id %}">Update</a>
+                        <a class="btn btn-success" href="{% url 'employee_delete' employee.id %}">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock content %}

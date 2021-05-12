@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block title %}<title>Employee Register</title>{% endblock title %}
+    
+    <link rel="stylesheet" href="{% static 'employee_register/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'employee_register/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'employee_register/css/style.css' %}">
+</head>
+<body>
+        <div class="container">
+           <div class="col md-10 offset-md-1 mt-5">
+                <div class="jumbotron">
+                     {% block heading %}
+                    <h1 class="display-4 text-center"> </h1>
+                    <p class="lead font-italic h2 text-center"><strong>It will shown Employees Form</strong></p>
+                    <hr class="my-4">
+                    {% endblock heading %}
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+           </div>
+        </div>
+        
+    {% block deleteview %}
+         <footer class="text-center mx-3"> &copy; 2017. All rights reserved </footer>
+    {% endblock deleteview %}
+
+    <script src="{% static 'employee_register/js/all.min.js' %}"></script>
+    <script src="{% static 'employee_register/js/popper.js' %}"></script>
+    <script src="{% static 'employee_register/js/bootstrap.min.js' %}"></script>
+ </body>
+</html>

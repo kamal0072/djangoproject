@@ -1,0 +1,16 @@
+{% extends 'employee_register/base.html' %}    
+{% block deleteview %}
+    {% block heading %}
+    <h3 class="text-center mt-5"></h3>{% endblock heading %}                    
+   
+
+
+    <div class="container text-center">
+       <form method="POST">
+        {% csrf_token %}
+        <h3>Are you sure to delete this item ?</h3>
+        <input class="btn btn-success" type="submit" value="Yes" />
+        <a class="btn btn-danger font-weight-bold" href="{% url 'employee_list' %}">NO</a>
+    </form>
+    </div>
+        {% endblock deleteview %}
