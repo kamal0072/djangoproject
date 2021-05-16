@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     'enroll',
     'dajaxice',
     'dajax',
+    'crispy_forms',
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+    
 TEMPLATE_LOADERS = (
    'django.template.loaders.filesystem.Loader',
    'django.template.loaders.app_directories.Loader',
