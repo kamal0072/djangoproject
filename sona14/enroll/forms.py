@@ -1,5 +1,10 @@
 from django import forms
-
-class EnrollForm(forms.Form):
-    title = forms.CharField()
-    pub_date = forms.DateField()
+from django.forms import formset_factory
+from .models import StudentModel
+class StudentForm(forms.ModelForm):
+    class Meta:
+        model=StudentModel
+        fields=[
+            'title',
+            'description'
+        ]

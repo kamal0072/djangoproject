@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+        <h1>Welcome to Geeksforgeeks.</h1> 
+        {% comment %} <p> Data  is {{  data }}</p>
+        <h4>List is </h4>
+        <ul>
+        {% for i in list %}
+        <li>{{ i }}</li>
+        {% endfor %} {% endcomment %}
+        <ul>
+        <!-- Iterate over object_list -->
+        {% for object in object_list %}
+        <!-- Display Objects -->
+        <li>{{ object.id }}</li>
+        <li>{{ object.title }}</li>
+        <li>{{ object.description }}</li>
+    
+        <hr/>
+        <!-- If objet_list is empty  -->
+        {% empty %}
+        <li>No objects yet.</li>
+        {% endfor %}
+        </ul>        
+</body>
+</html>
